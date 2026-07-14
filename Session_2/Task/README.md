@@ -16,15 +16,15 @@ For this version, we built a fully functional backend logic system that takes in
 
 ## 🚀 How to Run Locally
 
-1. **Clone the repository and navigate to this folder:**
+1. **Clone the repository and activate the global environment:**
    ```bash
-   cd Session_2/Task
+   # From the root of the repository
+   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
    ```
 
-2. **Set up your virtual environment & install dependencies:**
+2. **Navigate to this folder & install dependencies:**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   cd Session_2/Task
    pip install pydantic pyyaml python-dotenv google-generativeai
    ```
 
