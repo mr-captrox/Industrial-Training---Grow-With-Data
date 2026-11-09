@@ -32,7 +32,7 @@ Each session is organized into:
 | **[Session 2](./Session_2)** | Prompt Engineering & Structured Outputs (v0) | [Northstar Triage Assistant v0](./Session_2/Task) | ✅ Completed |
 | **[Session 3](./Session_3)** | LangChain Integration & Agent Tools (v1) | [Northstar Triage Assistant v1](./Session_3/Task) | ✅ Completed |
 | **[Session 4](./Session_4)** | Tool Calling, Checkpoint Memory & Guardrails (v2) | [Northstar Triage Assistant v2](./Session_4/Task) | ✅ Completed |
-| **Session 5** | Retrieval-Augmented Generation (RAG) (v3) | Vector DB grounding & document retrieval | 🔜 In Progress |
+| **[Session 5](./Session_5)** | Retrieval-Augmented Generation (RAG) & Vector DB (v3) | [Northstar Triage Assistant v3](./Session_5/Task) | ✅ Completed |
 
 ---
 
@@ -45,11 +45,9 @@ flowchart LR
     S2["Session 2\n**v0 — Raw API**\nGemini API + Pydantic\nBasic triage & reply"]
     S3["Session 3\n**v1 — LangChain**\ninit_chat_model\nAgent with 2 tools"]
     S4["Session 4\n**v2 — Tool Calling**\n5 tools + memory\nguardrails + HITL"]
-    S5["Session 5\n**v3 — RAG** *(upcoming)*\nDocument retrieval\nfor grounding"]
+    S5["Session 5\n**v3 — RAG & Vector DB**\n6 tools + Qdrant RAG\nDocling & Gemini Embed"]
 
     S2 --> S3 --> S4 --> S5
-
-    style S5 stroke-dasharray: 5 5
 ```
 
 - **v0 (Session 2):** Pure Python + Google GenAI SDK. Enforces strict JSON categorization (`category`, `urgency`, `sentiment`, `need_human`, `summary`) and drafts empathetic replies with real-time token/cost accounting.
@@ -59,6 +57,11 @@ flowchart LR
   - **Conversational Memory:** Thread-isolated persistence via LangGraph `InMemorySaver`.
   - **Defense-in-Depth Middleware:** `policy_guard` (prompt injection defense), `ToolRetryMiddleware`, `ModelCallLimitMiddleware`, and `HumanInTheLoopMiddleware` for gated refund approval.
   - **Output Contracts:** `Resolution` schema guaranteeing audited tool usage.
+- **v3 (Session 5):** Enterprise RAG integration featuring:
+  - **6 Domain Tools:** Added `company_policy(query)` for dynamic semantic retrieval over corporate policy documents.
+  - **Document Intelligence & Ingestion:** Deep PDF parsing (Docling vs PyMuPDF4LLM) and `RecursiveCharacterTextSplitter`.
+  - **Vector Database:** Qdrant Cloud vector collection with Google Gemini (`gemini-embedding-2`) dense vector representations.
+  - **Observability:** LangSmith `@traceable` decorators for end-to-end retrieval tracing.
 
 ---
 
@@ -96,6 +99,15 @@ Grow-With-Data-Training/
         ├── README.md
         ├── prompt.yml
         └── session4taskcode.ipynb
+└── Session_5/
+    ├── What_I_Learnt/
+    │   ├── README.md
+    │   └── session5.ipynb
+    └── Task/
+        ├── README.md
+        ├── prompt.yml
+        ├── session5taskcode.ipynb
+        └── session5ipynbtask.ipynb
 ```
 
 ---

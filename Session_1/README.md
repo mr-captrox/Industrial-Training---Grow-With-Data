@@ -35,3 +35,4 @@ Session 1 laid the ground rules for the entire training journey:
 - **Session 3:** Adopting LangChain and connecting LLMs to external tool functions.
 - **Session 4:** Building autonomous multi-tool agents with short-term conversational memory and security guardrails.
 - **Session 5:** Retrieval-Augmented Generation (RAG) for grounding agents with external documents.
+

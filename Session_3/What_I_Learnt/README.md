@@ -34,3 +34,4 @@ Explore the **LangChain** ecosystem to transition from raw SDK API calls to a un
 
 ## 📂 Notebooks in this Directory
 - [`session3.ipynb`](./session3.ipynb): End-to-end interactive exploration covering LangSmith tracing, ChatOllama, message roles, tool definitions, and agent workflows.
+

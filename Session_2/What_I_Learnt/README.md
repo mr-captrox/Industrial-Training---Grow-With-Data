@@ -25,3 +25,4 @@ Explore the mechanics of interacting directly with modern LLM APIs, mastering pr
 
 ## 📂 Notebooks in this Directory
 - [`session2.ipynb`](./session2.ipynb): Interactive demonstration of LLM client initialization, completion requests, and graceful exception handling for API limits.
+
